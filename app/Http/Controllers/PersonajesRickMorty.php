@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Services\RickMortyServices\RickMortyApi;
+use App\Services\RickMortyServices\RickMortyApi;
 
 class PersonajesRickMorty extends Controller
 {
@@ -35,7 +35,8 @@ class PersonajesRickMorty extends Controller
      */
     public function show(string $id)
     {
-        //
+        $personajes = $this->api->obtenerPorId($id);
+        return response()->json($personajes);
     }
 
     /**

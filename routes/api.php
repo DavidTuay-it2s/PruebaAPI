@@ -1,12 +1,11 @@
 <?php
 
-use App\Services\RickMortyServices\RickMortyApi;
+use App\Http\Controllers\PersonajesRickMorty;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/test', function () {
     return view('welcome');
 });
 
-Route::controller(RickMortyApi::class)->group(function () {
-    Route::get('/personajes', 'listar');
-});
+Route::get('/personajes', [PersonajesRickMorty::class, 'index']);
+Route::get('/personajes/{id}', [PersonajesRickMorty::class, 'show']);
