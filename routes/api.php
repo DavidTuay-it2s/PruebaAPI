@@ -8,4 +8,5 @@ Route::get('/test', function () {
 });
 
 Route::get('/personajes', [PersonajesRickMorty::class, 'index']);
+Route::post('/personajes', [PersonajesRickMorty::class, 'store']);
 Route::get('/personajes/{id}', [PersonajesRickMorty::class, 'show']);

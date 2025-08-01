@@ -27,7 +27,8 @@ class PersonajesRickMorty extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $guardar =  $this->api->GuardarDatosPerso($request);
+      return response()->json($guardar);
     }
 
     /**

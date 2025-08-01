@@ -18,6 +18,7 @@ return new class extends Migration
            $table->string('genero');
            $table->string('imagen');
            $table->string('estado');
+           $table->timestamps();
         });
     }
 
