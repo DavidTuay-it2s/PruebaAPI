@@ -3,15 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Services\RickMortyServices\RickMortyApi;
 
 class PersonajesRickMorty extends Controller
 {
+    protected $api;
+
+    public function __construct(RickMortyApi $api)
+        {
+           $this->api = $api;
+        }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $personajes = $this->api->Listar();
+        return response()->json($personajes);
     }
 
     /**
